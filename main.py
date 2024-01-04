@@ -14,7 +14,7 @@ class Photographer:
 
         # self.photo = photos if self.validate_photos(photos) else list()
         self.company=company
-        self.date=date
+        self.date=date if self.validate_date(date) else "Invalid Date"
         self.email = email if self.validate_email(email) else "Invalid Email"
 
     def photo_desc(self):
@@ -35,6 +35,7 @@ class Photographer:
         print("Company: ", self.company)
         print("Age: ", self.age)
         print("Email: ", self.email)
+        print("Date ", self.date)
 
         self.photo_desc()
         print("--------------------------------------------------------")
@@ -65,7 +66,9 @@ class Photographer:
         
                  
 
-
+    def validate_date(self,_date):
+        if isinstance(_date,str):return True
+        else: return False
 
        
     def __str__(self) -> str:
@@ -79,3 +82,6 @@ class Photo:
         self.alt_text=alt_text
 
 
+
+
+    
