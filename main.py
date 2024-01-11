@@ -3,7 +3,7 @@
 class Photographer:
     def __init__(self,id,name="",age=0,photos="",company="",date="",email=""):
         self.id=id
-        self.name=name
+        self.name=name    
         self.age=age
     
         if self.validate_photos(photos):
